@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CPX visualizer</title>
+  <script src="//d3js.org/d3-color.v1.min.js"></script>
+  <script src="//d3js.org/d3-interpolate.v1.min.js"></script>
+  <script src="//d3js.org/d3-scale.v2.min.js"></script>
+  <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="cpx-obj" src="cpx.obj"></a-asset-item>
+      <a-asset-item id="cpx-mtl" src="cpx.mtl"></a-asset-item>
+    </a-assets>
+    <a-entity
+      light="type: ambient; color: #BBB;"
+    ></a-entity>
+    <a-entity
+      id="light"
+      position="-0.5 1 1"
+      light="
+        type: directional;
+        color: #FFF;
+        intensity: 0.6;
+      "
+    ></a-entity>
+
+
+    <a-entity id="cpx" position="0 1.4 -0.8">
+      <a-entity rotation="270 0 0">
+
+        <a-obj-model
+          position="-2.12 -1 0"
+          scale="0.05 0.05 0.05"
+          src="#cpx-obj"
+          color="rgb(138, 43, 226)"
+          material="
+            opacity: 0.85;
+            transparent: true;
+          "
+        ></a-obj-model>
+      </a-entity>
+    </a-entity>
+  </a-scene>
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
