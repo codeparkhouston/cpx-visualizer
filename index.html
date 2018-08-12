@@ -6,6 +6,8 @@
   <script src="//d3js.org/d3-interpolate.v1.min.js"></script>
   <script src="//d3js.org/d3-scale.v2.min.js"></script>
   <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|PT+Mono" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 <body>
   <a-scene>
@@ -13,20 +15,6 @@
       <a-asset-item id="cpx-obj" src="cpx.obj"></a-asset-item>
       <a-asset-item id="cpx-mtl" src="cpx.mtl"></a-asset-item>
     </a-assets>
-    <a-entity
-      light="type: ambient; color: #BBB;"
-    ></a-entity>
-    <a-entity
-      id="light"
-      position="-0.5 1 1"
-      light="
-        type: directional;
-        color: #FFF;
-        intensity: 0.6;
-      "
-    ></a-entity>
-
-
     <a-entity id="cpx" position="0 1.4 -0.8">
       <a-entity rotation="270 0 0">
 
@@ -43,6 +31,8 @@
       </a-entity>
     </a-entity>
   </a-scene>
+  <div id="information">
+  </div>
   <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
