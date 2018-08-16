@@ -7,32 +7,41 @@
   <script src="//d3js.org/d3-scale.v2.min.js"></script>
   <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|PT+Mono" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./main.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+
   <a-scene>
-    <a-assets>
-      <a-asset-item id="cpx-obj" src="cpx.obj"></a-asset-item>
-      <a-asset-item id="cpx-mtl" src="cpx.mtl"></a-asset-item>
-    </a-assets>
+
+<!--  Position the 3D CPX to be in front of the viewer.  -->
     <a-entity id="cpx" position="0 1.4 -0.8">
+      
+<!--  Rotate the CPX model so that it lies flat with sensors on top.  -->
       <a-entity rotation="270 0 0">
 
+<!--  Code that loads in the 3D shape file of the CPX.  -->
+<!--  The CPX is coded to be slightly transparent.  -->
+<!--  Position and scale the cpx.obj model to be in the center and small enough to fit on the screen.-->
         <a-obj-model
-          position="-2.12 -1 0"
-          scale="0.05 0.05 0.05"
-          src="#cpx-obj"
-          color="rgb(138, 43, 226)"
+          src="cpx.obj"
+
           material="
             opacity: 0.85;
             transparent: true;
           "
+
+          position="-2.12 -1 0"
+          scale="0.05 0.05 0.05"
         ></a-obj-model>
       </a-entity>
     </a-entity>
   </a-scene>
-  <div id="information">
-  </div>
-  <script type="text/javascript" src="./main.js"></script>
+
+<!--  A box for information to be displayed on the right-hand side.  -->
+  <div id="information"></div>
+
+<!--  Bring in the JavaScript code that reads in our data and animates the CPX.  -->
+  <script type="text/javascript" src="main.js"></script>
+
 </body>
 </html>
